@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+:root {
+  --button-color: #0068df;
+  --bg-body: #0a111f;
+  --font-inter: "Inter", sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  background-color: var(--bg-body);
+}
+
+header {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  padding: 30px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+input[type="search"] {
+  padding: 15px 20px;
+  width: 500px;
+  border-radius: 30px;
+  font-size: 1em;
+  color: #0a111f;
+  font-family: var(--font-inter);
+  letter-spacing: 1.5px;
+  outline: none;
+  border: none;
+  margin-right: 5px;
+}
+#btn-search {
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--button-color);
+  color: white;
+  font-size: 1em;
+}
+#content {
+  /* border: 1px solid salmon; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+.card {
+  width: 400px;
+  /* border: 1px solid red; */
+  margin-bottom: 20px;
+  padding: 20px;
+  color: rgb(201, 201, 201);
+}
+.card .card-header {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+/* https://github.com/febriadj/lk21-api#installation */
