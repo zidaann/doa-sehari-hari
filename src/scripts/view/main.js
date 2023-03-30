@@ -1,30 +1,62 @@
-import DataSource from "../data/data-source.js";
-import "../../components/search-bar.js";
-
+import axios from "axios";
+import card from "../../components/card.js";
 const main = () => {
-  const searchElement = document.querySelector("search-bar");
-  //   const buttonSearch = document.querySelector("#btn-search");
+  const baseUrl = `https://doa-doa-api-ahmadramadhan.fly.dev/api`;
+  const content = document.getElementById("content");
+  const btnSearch = document.getElementById("btn-search");
+  const btnScroll = document.getElementById("scrollUp");
 
-  const onButtonSearchClicked = async () => {
+  btnSearch.addEventListener("click", function (e) {
+    e.preventDefault();
+    const keyword = document.getElementById("keyword").value.toLowerCase();
+    const cardItems = document.querySelectorAll(".card");
+    for (let i = 0; i < cardItems.length; i++) {
+      const doaTitle = cardItems[i].getElementsByClassName("card-header")[0];
+      if (doaTitle) {
+        const textTitle = doaTitle.textContent || doaTitle.innerHTML;
+        if (textTitle.toLowerCase().indexOf(keyword) > -1) {
+          cardItems[i].style.display = "block";
+        } else {
+          cardItems[i].style.display = "none";
+        }
+      }
+    }
+  });
+
+  const getDoa = async () => {
     try {
-      const result = await DataSource.searchMovie(searchElement.value);
-      renderResult(result);
-    } catch (message) {
-      fallbackResult(message);
+      const { data } = await axios.get(`${baseUrl}`);
+      displayDoa(data);
+    } catch (e) {
+      console.log("Something went wrong!");
     }
   };
-
-  const renderResult = (results) => {
-    // clubListElement.clubs = results;
-    console.log(results);
+  const displayDoa = (data) => {
+    const item = data.map((data) => {
+      return card(data);
+    });
+    content.innerHTML = item;
   };
 
-  const fallbackResult = (message) => {
-    // clubListElement.renderError(message);
-    console.log(message);
+  window.onscroll = function () {
+    scrollFunction();
   };
-
-  searchElement.clickEvent = onButtonSearchClicked;
+  const scrollFunction = () => {
+    if (
+      document.body.scrollTop > 500 ||
+      document.documentElement.scrollTop > 500
+    ) {
+      btnScroll.style.display = "block";
+    } else {
+      btnScroll.style.display = "none";
+    }
+  };
+  const handleScrollUp = document.getElementById("scrollUp");
+  handleScrollUp.addEventListener("click", function () {
+    const element = document.getElementById("menu");
+    element.scrollIntoView({ behavior: "smooth" });
+  });
+  getDoa();
 };
 
 export default main;

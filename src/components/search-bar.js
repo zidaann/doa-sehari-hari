@@ -13,7 +13,7 @@ class SearchBar extends HTMLElement {
   }
 
   get value() {
-    return this.shadowDOM.querySelector("#searchElement").value;
+    this.shadowDOM.querySelector("#searchElement").value;
   }
 
   render() {
