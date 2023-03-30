@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from 'axios'
 // import { json } from "stream/consumers";
 
-const baseUrl = `https://doa-doa-api-ahmadramadhan.fly.dev/api`;
+const baseUrl = 'https://doa-doa-api-ahmadramadhan.fly.dev/api'
 class DataSource {
   static searchMovie = async (keyword) => {
     // return fetch(`https://sports-api.dicoding.dev/teams/search?t=${keyword}`)
@@ -17,11 +17,11 @@ class DataSource {
     //     }
     //   });
     try {
-      const { data } = await axios.get(`${baseUrl}/doa/${keyword}`);
-      console.log(data);
+      const { data } = await axios.get(`${baseUrl}/doa/${keyword}`)
+      console.log(data)
     } catch (e) {
-      console.log(e);
+      console.log(e)
     }
-  };
+  }
 }
-export default DataSource;
+export default DataSource

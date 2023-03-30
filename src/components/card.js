@@ -12,6 +12,6 @@ const card = (data) => {
             </div>
           </div>
         </div>
-  `;
-};
-export default card;
+  `
+}
+export default card

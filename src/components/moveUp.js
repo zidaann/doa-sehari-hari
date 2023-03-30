@@ -1,24 +1,24 @@
 const moveUp = () => {
-  let btnScroll = document.getElementById("back-to-top");
+  let btnScroll = document.getElementById('back-to-top')
   window.onscroll = function () {
-    scrollFunction();
-  };
+    scrollFunction()
+  }
   function scrollFunction() {
     if (
       document.body.scrollTop > 500 ||
       document.documentElement.scrollTop > 500
     ) {
-      btnScroll.style.display = "Block";
+      btnScroll.style.display = 'Block'
     } else {
-      btnScroll.style.display = "none";
+      btnScroll.style.display = 'none'
     }
   }
 
   const handleScrollUp = (value) => {
-    const element = document.getElementById("menu");
-    element.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById('menu')
+    element.scrollIntoView({ behavior: 'smooth' })
     // alert('hai');
-  };
+  }
   return `
     <button class="moveUp" id='back-to-top' onVlick="handleScrollUp(
     "top"
@@ -37,7 +37,7 @@ const moveUp = () => {
       />
     </svg>
   </button>
-    `;
-};
+    `
+}
 
-export default moveUp;
+export default moveUp

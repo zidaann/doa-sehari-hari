@@ -1,11 +1,11 @@
 class AppBar extends HTMLElement {
   constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+    super()
+    this.shadowDOM = this.attachShadow({ mode: 'open' })
   }
 
   connectedCallback() {
-    this.render();
+    this.render()
   }
   render() {
     this.shadowDOM.innerHTML = `
@@ -23,8 +23,8 @@ class AppBar extends HTMLElement {
           <h1>Kumpulan Doa Sehari-hari</h1>
         </div>
       </header>
-        `;
+        `
   }
 }
 
-customElements.define("app-bar", AppBar);
+customElements.define('app-bar', AppBar)

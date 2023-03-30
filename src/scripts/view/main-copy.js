@@ -1,30 +1,30 @@
-import DataSource from "../data/data-source.js";
-import "../../components/search-bar.js";
+import DataSource from '../data/data-source.js'
+import '../../components/search-bar.js'
 
 const main = () => {
-  const searchElement = document.querySelector("search-bar");
+  const searchElement = document.querySelector('search-bar')
   //   const buttonSearch = document.querySelector("#btn-search");
 
   const onButtonSearchClicked = async () => {
     try {
-      const result = await DataSource.searchMovie(searchElement.value);
-      renderResult(result);
+      const result = await DataSource.searchMovie(searchElement.value)
+      renderResult(result)
     } catch (message) {
-      fallbackResult(message);
+      fallbackResult(message)
     }
-  };
+  }
 
   const renderResult = (results) => {
     // clubListElement.clubs = results;
-    console.log(results);
-  };
+    console.log(results)
+  }
 
   const fallbackResult = (message) => {
     // clubListElement.renderError(message);
-    console.log(message);
-  };
+    console.log(message)
+  }
 
-  searchElement.clickEvent = onButtonSearchClicked;
-};
+  searchElement.clickEvent = onButtonSearchClicked
+}
 
-export default main;
+export default main

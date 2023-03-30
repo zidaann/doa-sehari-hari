@@ -1,13 +1,13 @@
-const Data = require("../scripts/data/data-source.js");
+const Data = require('../scripts/data/data-source.js')
 class CardItem extends HTMLElement {
   constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+    super()
+    this.shadowDOM = this.attachShadow({ mode: 'open' })
   }
 
   set card(card) {
-    this._card = card;
-    render();
+    this._card = card
+    render()
   }
 
   render() {
@@ -21,8 +21,8 @@ class CardItem extends HTMLElement {
               praesentium at nesciunt illum impedit ab.
             </div>
           </div>
-    `;
+    `
   }
 }
 
-customElements.define("card-item", CardItem);
+customElements.define('card-item', CardItem)
