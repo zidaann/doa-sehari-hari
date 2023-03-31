@@ -1,12 +1,13 @@
 import axios from 'axios'
-import card from '../../components/card.js'
+import card from '../../components/card'
+
 const main = () => {
   const baseUrl = 'https://doa-doa-api-ahmadramadhan.fly.dev/api'
   const content = document.getElementById('content')
   const btnSearch = document.getElementById('btn-search')
   const btnScroll = document.getElementById('scrollUp')
 
-  btnSearch.addEventListener('click', function (e) {
+  btnSearch.addEventListener('click', (e) => {
     e.preventDefault()
     const keyword = document.getElementById('keyword').value.toLowerCase()
     const cardItems = document.querySelectorAll('.card')
@@ -32,19 +33,17 @@ const main = () => {
     }
   }
   const displayDoa = (data) => {
-    const item = data.map((data) => {
-      return card(data)
-    })
+    const item = data.map((data) => card(data)).join('')
     content.innerHTML = item
   }
 
-  window.onscroll = function () {
+  window.onscroll = () => {
     scrollFunction()
   }
   const scrollFunction = () => {
     if (
-      document.body.scrollTop > 500 ||
-      document.documentElement.scrollTop > 500
+      document.body.scrollTop > 500
+      || document.documentElement.scrollTop > 500
     ) {
       btnScroll.style.display = 'block'
     } else {
@@ -52,7 +51,7 @@ const main = () => {
     }
   }
   const handleScrollUp = document.getElementById('scrollUp')
-  handleScrollUp.addEventListener('click', function () {
+  handleScrollUp.addEventListener('click', () => {
     const element = document.getElementById('menu')
     element.scrollIntoView({ behavior: 'smooth' })
   })

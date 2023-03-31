@@ -101,7 +101,6 @@ input[type="search"] {
   padding-block: 5px;
   display: block;
 }
-
 .moveUp {
   position: fixed;
   background-color: var(--button-color);

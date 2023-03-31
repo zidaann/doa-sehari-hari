@@ -1,5 +1,4 @@
-const card = (data) => {
-  return `
+const card = (data) => `
           <div class="card">
           <div class="card-header">${data.doa}</div>
           <div class="card-body">
@@ -13,5 +12,4 @@ const card = (data) => {
           </div>
         </div>
   `
-}
 export default card

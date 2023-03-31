@@ -7,6 +7,7 @@ class AppBar extends HTMLElement {
   connectedCallback() {
     this.render()
   }
+
   render() {
     this.shadowDOM.innerHTML = `
       <style>

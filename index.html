@@ -8,30 +8,32 @@
     <link rel="shortcut icon" href="#" />
   </head>
   <body id="menu">
-    <app-bar></app-bar>
-    <main>
-      <div class="container">
-        <div id="search-container">
-          <input type="search" id="keyword" placeholder="Cari..." />
-          <button type="submit" id="btn-search">Cari</button>
+      <app-bar></app-bar>
+      <main>
+        <div class="container">
+          <div id="search-container">
+            <input type="search" id="keyword" placeholder="Cari..." />
+            <button type="submit" id="btn-search">Cari</button>
+          </div>
+          <div id="content"></div>
         </div>
-        <div id="content"></div>
-      </div>
-      <button class="moveUp" id="scrollUp">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-arrow-up"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
-          />
-        </svg>
-      </button>
-    </main>
+        <button class="moveUp" id="scrollUp">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-arrow-up"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
+            />
+          </svg>
+        </button>
+      </main>
+    <footer-bar></footer-bar>
+
   </body>
 </html>
