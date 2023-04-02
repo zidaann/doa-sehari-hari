@@ -160,14 +160,13 @@ input[type="search"] {
 @media screen and (max-width: 768px) {
   .card {
     width: 300px;
-    margin: 0 auto;
+    margin: 10px auto;
   }
   .card img{
     width: 300px;
   }
   #content {
     padding: 5px;    
-    border: 1px solid red;
   }
   .container{
     padding: 10px;

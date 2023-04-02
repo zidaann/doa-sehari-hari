@@ -25,6 +25,10 @@
                 "allowForLoopAfterthoughts": true
             }
         ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
         "no-use-before-define": "off",
         "no-shadow": "off",
         "no-console": "off"

@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import axios from 'axios'
 import card from '../../components/card'
 
 const main = () => {
@@ -23,34 +25,16 @@ const main = () => {
     }
   })
 
-  /*
-    ~ Fetch Api belum beres , kena CORS
-    ~ api pake ajax
-  */
-  // const getMovie = async () => {
-  //   fetch(`${baseUrl}`, {
-  //     method: 'GET',
-  //   })
-  //     .then((response) => response.json())
-  //     .then((result) => {
-  //       const data = result.items.slice(0, 20)
-  //       displayMovie(data)
-  //     })
-  //     .catch((error) => console.log(error))
-  // }
-
   const getMovie = async () => {
     try {
-      const response = await fetch(`${baseUrl}`)
-      const { results } = await response.json()
-      console.log(results)
-      displayMovie(results)
+      const { data } = await axios.get(`${baseUrl}`)
+      displayMovie(data.results)
     } catch (error) {
       console.log('Something went wrong!')
     }
   }
   const displayMovie = (data) => {
-    const item = data.map((data) => card(data)).join('')
+    const item = data.map((data) => card(data))
     content.innerHTML = item
   }
 
