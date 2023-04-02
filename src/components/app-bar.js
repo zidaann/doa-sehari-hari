@@ -21,7 +21,7 @@ class AppBar extends HTMLElement {
 
         <header>
         <div class="jumbotron">
-          <h1>Kumpulan Doa Sehari-hari</h1>
+          <h1>Kumpulan Film</h1>
         </div>
       </header>
         `

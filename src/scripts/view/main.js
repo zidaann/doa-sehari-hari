@@ -1,8 +1,7 @@
-import axios from 'axios'
 import card from '../../components/card'
 
 const main = () => {
-  const baseUrl = 'https://doa-doa-api-ahmadramadhan.fly.dev/api'
+  const baseUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=7b4eaf195c0014cfc0c940e667d4d177&language=en-US&page=1'
   const content = document.getElementById('content')
   const btnSearch = document.getElementById('btn-search')
   const btnScroll = document.getElementById('scrollUp')
@@ -24,15 +23,33 @@ const main = () => {
     }
   })
 
-  const getDoa = async () => {
+  /*
+    ~ Fetch Api belum beres , kena CORS
+    ~ api pake ajax
+  */
+  // const getMovie = async () => {
+  //   fetch(`${baseUrl}`, {
+  //     method: 'GET',
+  //   })
+  //     .then((response) => response.json())
+  //     .then((result) => {
+  //       const data = result.items.slice(0, 20)
+  //       displayMovie(data)
+  //     })
+  //     .catch((error) => console.log(error))
+  // }
+
+  const getMovie = async () => {
     try {
-      const { data } = await axios.get(`${baseUrl}`)
-      displayDoa(data)
-    } catch (e) {
+      const response = await fetch(`${baseUrl}`)
+      const { results } = await response.json()
+      console.log(results)
+      displayMovie(results)
+    } catch (error) {
       console.log('Something went wrong!')
     }
   }
-  const displayDoa = (data) => {
+  const displayMovie = (data) => {
     const item = data.map((data) => card(data)).join('')
     content.innerHTML = item
   }
@@ -55,7 +72,7 @@ const main = () => {
     const element = document.getElementById('menu')
     element.scrollIntoView({ behavior: 'smooth' })
   })
-  getDoa()
+  getMovie()
 }
 
 export default main
