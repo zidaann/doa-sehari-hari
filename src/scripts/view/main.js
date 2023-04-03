@@ -13,9 +13,9 @@ const main = () => {
     const keyword = document.getElementById('keyword').value.toLowerCase()
     const cardItems = document.querySelectorAll('.card')
     for (let i = 0; i < cardItems.length; i++) {
-      const doaTitle = cardItems[i].getElementsByClassName('card-header')[0]
-      if (doaTitle) {
-        const textTitle = doaTitle.textContent || doaTitle.innerHTML
+      const movieTitle = cardItems[i].getElementsByClassName('card-header')[0]
+      if (movieTitle) {
+        const textTitle = movieTitle.textContent || movieTitle.innerHTML
         if (textTitle.toLowerCase().indexOf(keyword) > -1) {
           cardItems[i].style.display = 'block'
         } else {
